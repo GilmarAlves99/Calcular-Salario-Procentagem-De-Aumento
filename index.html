@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' gap:; style-src 'self' 'unsafe-inline'; media-src *" />
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+
+
+</head>
+
+<body>
+
+    <h1>Calcular Salario</h1>
+    <h2>Porcentagem de aumento</h2>
+    <div class="conteudoform">
+        <form name="exemploradio" method="post" action="">
+            <table>
+                <tr><input type="text" class="val" name="valor"></tr>
+
+                <tr>
+
+                    <td class="radio">
+
+                        <input type="radio" name="radiovalor" value="10">10%<br>
+                        <input type="radio" name="radiovalor" value="20">20%<br>
+                        <input type="radio" name="radiovalor" value="30">30%<br>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="res" name="resultado"></td>
+                </tr>
+            </table>
+            <input type="button" class="botao1" name="somar" value="Calcular Salario" onclick="calcularsoma()">
+        </form>
+    </div>
+
+    <script type="text/javascript">
+        function calcularsoma() {
+
+            var total;
+            var salario;
+            //recebendo valores da caixa de texto
+            salario = parseFloat(document.exemploradio.valor.value);
+
+            //verifica o radiobutton selecionado com estrutura de condição IF
+            if (document.exemploradio.radiovalor.value == "10") {
+                total = salario + (salario * 10) / 100;
+            }
+            if (document.exemploradio.radiovalor.value == "20") {
+                total = salario + (salario * 20) / 100;
+            }
+            if (document.exemploradio.radiovalor.value == "30") {
+                total = salario + (salario * 30) / 100;
+            }
+            document.exemploradio.resultado.value = "Total da soma é : " + total;
+
+        }
+    </script>
+</body>
+
+</html>
